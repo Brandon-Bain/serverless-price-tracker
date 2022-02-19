@@ -25,7 +25,11 @@ const serverlessConfig: AWS = {
     prune: { automatic: true, number: 2 },
   },
   functions,
-  plugins: ['serverless-offline', 'serverless-prune-plugin'],
+  plugins: [
+    'serverless-plugin-typescript',
+    'serverless-offline',
+    'serverless-prune-plugin',
+  ],
 };
 
 module.exports = serverlessConfig;
