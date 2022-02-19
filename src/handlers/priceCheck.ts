@@ -1,6 +1,6 @@
 import { handlerWrapper } from '../utils/handlerWrapper';
 import { getHomeDepotPrice } from '../services/homedepot';
-import { getBrowser } from '../services/getBrowser';
+import { getBrowser } from '../utils/getBrowser';
 
 const myfunc = async () => {
   const browser = await getBrowser();
