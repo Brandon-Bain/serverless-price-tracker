@@ -6,5 +6,8 @@ const puppeteerExtra = addExtra(chromium.puppeteer);
 puppeteerExtra.use(StealthPlugin());
 
 export const getBrowser = async () => {
-  return await puppeteerExtra.launch();
+  return await puppeteerExtra.launch({
+    headless: true,
+    args: ['--no-sandbox'],
+  });
 };
