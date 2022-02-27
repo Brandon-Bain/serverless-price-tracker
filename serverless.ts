@@ -23,6 +23,7 @@ const serverlessConfig: AWS = {
   },
   custom: {
     prune: { automatic: true, number: 2 },
+    'serverless-offline': { httpPort: 4000 },
   },
   functions,
   plugins: [
