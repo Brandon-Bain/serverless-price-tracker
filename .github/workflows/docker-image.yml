@@ -20,9 +20,13 @@ jobs:
         DOCKER_USER: ${{secrets.DOCKER_USER}}
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
       run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+
+    - name: Extract version
+      id: extract_version
+      uses: Saionaro/extract-package-version@v1.0.6
     
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ${{secrets.DOCKER_USER}}/serverless-price-tracker:latest
+      run: docker build . --file Dockerfile --tag ${{secrets.DOCKER_USER}}/serverless-price-tracker:${{ steps.extract_version.outputs.version }}
       
     - name: Docker Push
-      run: docker push ${{secrets.DOCKER_USER}}/serverless-price-tracker:latest
+      run: docker push ${{secrets.DOCKER_USER}}/serverless-price-tracker:${{ steps.extract_version.outputs.version }}
