@@ -22,7 +22,6 @@
     "@serverless/typescript": "^3.3.0",
     "@types/aws-lambda": "^8.10.92",
     "@types/node": "^17.0.21",
-    "@types/node-fetch": "^2.6.1",
     "@typescript-eslint/eslint-plugin": "^5.12.1",
     "@typescript-eslint/parser": "^5.12.1",
     "eslint": "^8.10.0",
@@ -32,16 +31,11 @@
     "serverless-offline": "^8.5.0",
     "serverless-plugin-typescript": "^2.1.1",
     "serverless-prune-plugin": "^2.0.1",
+    "source-map-support": "^0.5.21",
     "ts-node": "^10.5.0",
     "typescript": "^4.5.5"
   },
   "dependencies": {
-    "chrome-aws-lambda": "^10.1.0",
-    "himalaya": "^1.1.0",
-    "htmlparser2": "^7.2.0",
-    "node-fetch": "^2.6.7",
-    "node-html-parser": "^5.2.0",
-    "puppeteer": "^13.4.0",
     "puppeteer-extra": "^3.2.3",
     "puppeteer-extra-plugin-stealth": "^2.9.0"
   }

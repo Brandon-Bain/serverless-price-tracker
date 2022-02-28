@@ -1,16 +1,9 @@
-import type {
-  Context,
-  APIGatewayProxyEvent,
-} from 'aws-lambda';
+import 'source-map-support/register';
+import type { Context, APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
 
 export const handlerWrapper =
-  (
-    handlerFunction: (
-      event: APIGatewayProxyEvent,
-      context: Context
-    ) => Promise<unknown>
-  ) =>
-  async (event: APIGatewayProxyEvent, context: Context) => {
+  (handlerFunction: (event: APIGatewayProxyEvent, context: Context) => Promise<unknown>) =>
+  async (event: APIGatewayProxyEvent, context: Context): Promise<APIGatewayProxyResult> => {
     context.callbackWaitsForEmptyEventLoop = false;
 
     try {

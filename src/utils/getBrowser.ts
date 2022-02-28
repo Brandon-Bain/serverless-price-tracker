@@ -1,12 +1,12 @@
-import chromium from 'chrome-aws-lambda';
-import { addExtra } from 'puppeteer-extra';
+import puppeteer from 'puppeteer-extra';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 
-const puppeteerExtra = addExtra(chromium.puppeteer);
-puppeteerExtra.use(StealthPlugin());
+import type { VanillaPuppeteer } from 'puppeteer-extra';
 
-export const getBrowser = async () => {
-  return await puppeteerExtra.launch({
+puppeteer.use(StealthPlugin());
+
+export const getBrowser = async (): Promise<ReturnType<VanillaPuppeteer['launch']>> => {
+  return await puppeteer.launch({
     headless: true,
     args: ['--no-sandbox'],
   });
