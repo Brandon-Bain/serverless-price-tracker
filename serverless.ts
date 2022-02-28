@@ -1,7 +1,6 @@
 import type { AWS } from '@serverless/typescript';
 
-const region: AWS['provider']['region'] =
-  "${opt:region, 'us-east-1'}" as AWS['provider']['region'];
+const region: AWS['provider']['region'] = "${opt:region, 'us-east-1'}" as AWS['provider']['region'];
 
 const functions: AWS['functions'] = {
   testhandler: {
@@ -26,11 +25,7 @@ const serverlessConfig: AWS = {
     'serverless-offline': { httpPort: 4000 },
   },
   functions,
-  plugins: [
-    'serverless-plugin-typescript',
-    'serverless-offline',
-    'serverless-prune-plugin',
-  ],
+  plugins: ['serverless-plugin-typescript', 'serverless-offline', 'serverless-prune-plugin'],
 };
 
 module.exports = serverlessConfig;
