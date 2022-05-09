@@ -26,7 +26,7 @@
     "@typescript-eslint/parser": "^5.12.1",
     "eslint": "^8.10.0",
     "npm-check-updates": "^12.4.0",
-    "prettier": "^2.5.1",
+    "prettier": "^2.6.2",
     "serverless": "^3.4.0",
     "serverless-offline": "^8.5.0",
     "serverless-plugin-typescript": "^2.1.1",
